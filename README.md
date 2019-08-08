@@ -23,6 +23,7 @@ This repository provides information on how to run Hive in an EMR cluster. This 
 * Upload files into [s3](http://holowczak.com/getting-started-with-hive-on-amazon-elastic-map-reduce-emr/). 
     * You can use AWS CLI
     * You can go to your account at AWS and upload them manually
+    * Files I used are located [here](https://grouplens.org/datasets/movielens/)
 * Create a key pair
     * Your computer will automatically download the pem file. Most likely it will go to the Downloads folder
 * Move pem file in $HOME/.ssh 
