@@ -17,7 +17,7 @@ Note: The files are relatively small. It's better to aggregate them into large f
 */
 
 --Run bash command
---s3://{directory_with_files}/movies.csv to ./movies.csv
+--aws s3 cp s3://{directory_with_files}/movies.csv to ./movies.csv
 
 --Create DB
 CREATE DATABASE movies;
