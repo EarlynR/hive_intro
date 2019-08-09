@@ -1,15 +1,15 @@
-/*
--------------------------------------------------------------------------------------------
-Author: Earlyn Reinhardt
 
-Description: Show multiple ways to create tables from an S3 bucket.
-             File not meant to be run from the command line (not production ready).
-             Enter the queries separately.
-
-Note:       If you have multiple files in a directory, it will merge all text files into one,
-            even txt and csv files together.
 -------------------------------------------------------------------------------------------
-*/
+--Author: Earlyn Reinhardt
+
+--Description: Show multiple ways to create tables from an S3 bucket.
+--             File not meant to be run from the command line (not production ready).
+--             Enter the queries separately.
+
+--Note:       If you have multiple files in a directory, it will merge all text files into one,
+--            even txt and csv files together.
+-------------------------------------------------------------------------------------------
+
 
 --Create DB
 CREATE DATABASE movies;
@@ -20,13 +20,9 @@ SHOW SCHEMAS;
 USE movies;
 
 
-/*
-Create tables
 
-
-Use one or the other. Not both
-
-*/
+--Create tables
+--Use one or the other. Not both
 
 --Allows you to point to a specific type of file format
 CREATE EXTERNAL TABLE movies
@@ -38,7 +34,7 @@ CREATE EXTERNAL TABLE movies
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES ("input.regex" = "*.csv")
 STORED AS textfile
-LOCATION 's3://store-data-for-hive/files/'
+LOCATION 's3://{directory_name}/files/'
 TBLPROPERTIES ("skip.header.line.count"="1");
 
 
@@ -51,7 +47,7 @@ CREATE EXTERNAL TABLE movies
 )
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 STORED AS textfile
-LOCATION 's3://store-data-for-hive/files/'
+LOCATION 's3://{directory_name}/files/'
 TBLPROPERTIES ("skip.header.line.count"="1");
 
 --Create indices to optimize queries

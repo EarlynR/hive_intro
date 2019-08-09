@@ -37,5 +37,6 @@ This repository provides information on how to run Hive in an EMR cluster. This 
         * Pricing [here](https://aws.amazon.com/emr/pricing/) in case you need it 
     * Choose 3 instance (default option)
     * Use key pair that you just created. 
+    * Use the ssh command given by AWS.
 * Send s3 files to EMR cluster 
 * Run Hive queries 
